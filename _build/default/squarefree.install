@@ -6,3 +6,6 @@ lib: [
 bin: [
   "_build/install/default/bin/squarefree"
 ]
+doc: [
+  "_build/install/default/doc/squarefree/README.md"
+]

@@ -1,4 +1,4 @@
 (lang dune 3.0)
 (name squarefree)
-(sections (lib .) (bin ../../bin))
-(files (lib (META dune-package opam)) (bin (squarefree)))
+(sections (lib .) (bin ../../bin) (doc ../../doc/squarefree))
+(files (lib (META dune-package opam)) (bin (squarefree)) (doc (README.md)))

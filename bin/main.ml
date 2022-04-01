@@ -9,10 +9,6 @@ let squarefree (number: int) : bool =
     in inner 2 number
 ;;
 
-(*
-First pass: 2 12 -- i == max = false -> (2*2) mod 12 == 0 
-*)
-
 let list_squarefree_integers (x, y) =
     let rec inner start finish output =
         if start == finish
@@ -26,11 +22,11 @@ let list_squarefree_integers (x, y) =
 let print_squarefree_integers (x, y) =
     let squarefrees_unrev = list_squarefree_integers (x, y) in
     let squarefrees = List.rev squarefrees_unrev in
-    let rec inner sfs =
+    let rec inner sfs i count =
         match sfs with
-          []    -> Printf.printf "\n"
-        | h::t  -> (Printf.printf "%d " h; inner t;)
-    in inner squarefrees
+          []    -> count
+        | h::t  -> (if (i+1) mod 5 == 0 then (Printf.printf "%d\n" h) else (Printf.printf "%d " h); inner t (i+1) (count+1);)
+    in Printf.printf "\n\nTotal count of square-free numbers between %d and %d: %d\n" x y (inner squarefrees 0 0)
 ;;
 
 let () = 
