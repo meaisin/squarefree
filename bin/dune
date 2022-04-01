@@ -1,0 +1,4 @@
+(executable
+ (public_name squarefree)
+ (name main)
+ (libraries squarefree))
